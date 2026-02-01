@@ -50,8 +50,8 @@ const Education = () => {
                                             >
                                                 <Card
                                                     className={`card-hover transition-all duration-300 ${hoveredId === item.id
-                                                            ? 'shadow-lg scale-105 border-secondary/50'
-                                                            : ''
+                                                        ? 'shadow-lg scale-105 border-secondary/50'
+                                                        : ''
                                                         }`}
                                                 >
                                                     <CardContent className="p-6">
@@ -86,7 +86,17 @@ const Education = () => {
                                                         </p>
 
                                                         {/* Achievements */}
-                                                        <ul className="space-y-2">
+                                                        {Array.isArray(item.achievements) && item.achievements.length > 0 && (
+                                                            <ul className="space-y-2">
+                                                                {item.achievements.map((achievement, idx) => (
+                                                                    <li key={idx} className="text-sm text-foreground/80 flex items-start gap-2" >
+                                                                        <span className="text-secondary mt-1">•</span>
+                                                                        <span>{achievement}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        )}
+                                                        {/* <ul className="space-y-2">
                                                             {item.achievements.map((achievement, idx) => (
                                                                 <li
                                                                     key={idx}
@@ -96,7 +106,7 @@ const Education = () => {
                                                                     <span>{achievement}</span>
                                                                 </li>
                                                             ))}
-                                                        </ul>
+                                                        </ul> */}
                                                     </CardContent>
                                                 </Card>
                                             </div>
@@ -105,8 +115,8 @@ const Education = () => {
                                             <div className="hidden md:flex items-center justify-center">
                                                 <div
                                                     className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 border-background transition-all duration-300 ${hoveredId === item.id
-                                                            ? 'bg-secondary scale-150'
-                                                            : 'bg-muted'
+                                                        ? 'bg-secondary scale-150'
+                                                        : 'bg-muted'
                                                         }`}
                                                 />
                                             </div>
