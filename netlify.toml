@@ -1,0 +1,15 @@
+[build]
+  # Point to the frontend directory
+  base = "frontend"
+  
+  # Build command
+  command = "npm install && npm run build"
+  
+  # Publish the build output
+  publish = "build"
+
+# Redirect all routes to index.html for React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
