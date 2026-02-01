@@ -2,8 +2,8 @@
   # Point to the frontend directory
   base = "frontend"
   
-  # Build command
-  command = "npm install && npm run build"
+  # Build command with --legacy-peer-deps flag
+  command = "npm install --legacy-peer-deps && npm run build"
   
   # Publish the build output
   publish = "build"
