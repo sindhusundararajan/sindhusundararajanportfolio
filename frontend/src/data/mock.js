@@ -3,7 +3,7 @@
 
 export const personalInfo = {
   name: "Sindhu Sundararajan",
-  tagline: "<Test.Validate.Deploy />",
+  tagline: "<Learn.Build.Evolve />",
   title: "Software Development Engineer in Test",
   subtitle: "Quality Assurance | SDET | Test Automation Architect | Python & Cloud Testing Specialist",
   heroHeadline: "Quality as a Feature, Not a Phase",
@@ -89,32 +89,62 @@ export const workExperience = [
     ],
     technologies: ["Python", "Selenium", "PyTest", "MySQL", "Snowflake", "ETL", "CI/CD", "Jenkins"],
     type: "work"
-  },
+  }
+  // {
+  //   id: 4,
+  //   company: "Northeastern University",
+  //   degree: "Master of Professional Studies - Analytics",
+  //   specialization: "Applied Machine Intelligence",
+  //   period: "Sep 2022 - Jul 2024",
+  //   location: "Boston, MA",
+  //   achievements: [
+  //     "Specialized in Applied Machine Intelligence with focus on data quality and testing",
+  //     "Developed AI-powered investment portfolio optimization tool with 35% improved insights",
+  //     "Created predictive models using K-Means Clustering and Market Basket Analysis"
+  //   ],
+  //   type: "education"
+  // },
+  // {
+  //   id: 5,
+  //   company: "Anna University",
+  //   degree: "B.E. in Computer Science",
+  //   period: "Jul 2014 - May 2017",
+  //   location: "Tiruchirappalli, India",
+  //   achievements: [
+  //     "Strong foundation in algorithms, data structures, and software engineering principles",
+  //     "Graduated with honors, focusing on software quality and testing methodologies"
+  //   ],
+  //   type: "education"
+  // }
+];
+
+// Education
+export const education = [
   {
-    id: 4,
-    company: "Northeastern University",
-    degree: "Master of Professional Studies - Analytics",
-    specialization: "Applied Machine Intelligence",
+    id: 1,
+    institution: "Northeastern University",
+    degree: "Master of Professional Studies",
+    field: "Analytics - Applied Machine Intelligence",
     period: "Sep 2022 - Jul 2024",
-    location: "Boston, MA",
-    achievements: [
-      "Specialized in Applied Machine Intelligence with focus on data quality and testing",
-      "Developed AI-powered investment portfolio optimization tool with 35% improved insights",
-      "Created predictive models using K-Means Clustering and Market Basket Analysis"
-    ],
-    type: "education"
+    location: "Boston, MA"
+    // achievements: [
+    //   "Specialized in Applied Machine Intelligence with focus on data quality and testing",
+    //   "Developed AI-powered investment portfolio optimization tool with 35% improved insights",
+    //   "Created predictive models using K-Means Clustering and Market Basket Analysis"
+    // ],
+    // gpa: "3.8/4.0" // Add if you want to show GPA
   },
   {
-    id: 5,
-    company: "Anna University",
-    degree: "B.E. in Computer Science",
+    id: 2,
+    institution: "Anna University",
+    degree: "Bachelor of Engineering",
+    field: "Computer Science",
     period: "Jul 2014 - May 2017",
-    location: "Tiruchirappalli, India",
-    achievements: [
-      "Strong foundation in algorithms, data structures, and software engineering principles",
-      "Graduated with honors, focusing on software quality and testing methodologies"
-    ],
-    type: "education"
+    location: "Tiruchirappalli, India"
+    // achievements: [
+    //   "Strong foundation in algorithms, data structures, and software engineering principles",
+    //   "Graduated with honors, focusing on software quality and testing methodologies"
+    // ]
   }
 ];
 

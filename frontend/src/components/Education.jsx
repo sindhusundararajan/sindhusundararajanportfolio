@@ -1,0 +1,125 @@
+import React, { useState } from 'react';
+import { GraduationCap } from 'lucide-react';
+import { education } from '../data/mock';
+import { Card, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
+
+const Education = () => {
+    const [hoveredId, setHoveredId] = useState(null);
+
+    return (
+        <section id="education" className="section-padding bg-muted/30">
+            <div className="container-custom">
+                <div className="max-w-6xl mx-auto">
+                    {/* Section Header */}
+                    <div className="text-center mb-16 animate-fade-in">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                            Education
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Continuous learning and academic excellence
+                        </p>
+                    </div>
+
+                    {/* Timeline Container */}
+                    <div className="relative">
+                        {/* Timeline Line */}
+                        <div className="timeline-line hidden md:block" />
+
+                        {/* Timeline Items */}
+                        <div className="space-y-12">
+                            {education.map((item, index) => {
+                                const isLeft = index % 2 === 0;
+
+                                return (
+                                    <div
+                                        key={item.id}
+                                        className={`relative animate-slide-up`}
+                                        style={{ animationDelay: `${index * 0.1}s` }}
+                                        onMouseEnter={() => setHoveredId(item.id)}
+                                        onMouseLeave={() => setHoveredId(null)}
+                                    >
+                                        <div
+                                            className={`md:grid md:grid-cols-2 md:gap-8 ${isLeft ? '' : 'md:grid-flow-dense'
+                                                }`}
+                                        >
+                                            {/* Content Card */}
+                                            <div
+                                                className={`${isLeft ? 'md:col-start-1' : 'md:col-start-2'
+                                                    } mb-8 md:mb-0`}
+                                            >
+                                                <Card
+                                                    className={`card-hover transition-all duration-300 ${hoveredId === item.id
+                                                            ? 'shadow-lg scale-105 border-secondary/50'
+                                                            : ''
+                                                        }`}
+                                                >
+                                                    <CardContent className="p-6">
+                                                        {/* Icon & Degree */}
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-secondary/10 text-secondary">
+                                                                <GraduationCap className="h-5 w-5" />
+                                                            </div>
+                                                            <div className="flex-1">
+                                                                <h3 className="font-bold text-lg">
+                                                                    {item.degree}
+                                                                </h3>
+                                                                <p className="text-sm text-muted-foreground">
+                                                                    {item.institution}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        {/* Period & Location */}
+                                                        <div className="flex flex-wrap gap-2 mb-4">
+                                                            <Badge variant="outline" className="text-xs">
+                                                                {item.period}
+                                                            </Badge>
+                                                            <Badge variant="outline" className="text-xs">
+                                                                {item.location}
+                                                            </Badge>
+                                                        </div>
+
+                                                        {/* Field of Study */}
+                                                        <p className="text-sm font-medium text-secondary mb-3">
+                                                            {item.field}
+                                                        </p>
+
+                                                        {/* Achievements */}
+                                                        <ul className="space-y-2">
+                                                            {item.achievements.map((achievement, idx) => (
+                                                                <li
+                                                                    key={idx}
+                                                                    className="text-sm text-foreground/80 flex items-start gap-2"
+                                                                >
+                                                                    <span className="text-secondary mt-1">•</span>
+                                                                    <span>{achievement}</span>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </CardContent>
+                                                </Card>
+                                            </div>
+
+                                            {/* Timeline Node (Desktop) */}
+                                            <div className="hidden md:flex items-center justify-center">
+                                                <div
+                                                    className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 border-background transition-all duration-300 ${hoveredId === item.id
+                                                            ? 'bg-secondary scale-150'
+                                                            : 'bg-muted'
+                                                        }`}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Education;

@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Brand Column */}
             <div>
-              <h3 className="font-mono text-lg font-semibold mb-4">
+              <h3 className="font-mono italic text-xl md:text-2xl text-primary/90 tracking-wide">
                 {personalInfo.tagline}
               </h3>
               <p className="text-sm text-muted-foreground mb-4">

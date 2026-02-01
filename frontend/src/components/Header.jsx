@@ -41,11 +41,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/80 backdrop-blur-md shadow-md'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-background/80 backdrop-blur-md shadow-md'
+        : 'bg-transparent'
+        }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
@@ -53,7 +52,8 @@ const Header = () => {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="font-mono text-sm md:text-base font-medium text-foreground/70 hover:text-foreground transition-colors duration-300 hover:opacity-100 no-select"
+            // className="font-mono text-sm md:text-base font-medium text-foreground/70 hover:text-foreground transition-colors duration-300 hover:opacity-100 no-select"
+            className="font-mono italic text-xl md:text-2xl text-primary/90 tracking-wide"
           >
             {personalInfo.tagline}
           </a>
